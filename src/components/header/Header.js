@@ -1,9 +1,12 @@
-import React, {useEffect} from 'react'
-import {BarChart, SearchRounded, ShoppingCartRounded} from "@mui/icons-material";
+import React, { useEffect } from 'react'
+import { BarChart, SearchRounded, ShoppingCartRounded } from "@mui/icons-material";
 import '../../style/header.css'
+import { useStateValue } from '../../store/state-provider'
 
 
 function Header() {
+    const [{ cart }] = useStateValue()
+    console.log(cart)
 
     useEffect(() => {
         const togglemenu = document.querySelector('.toggle-menu')
@@ -17,16 +20,16 @@ function Header() {
         <img
             src="https://firebasestorage.googleapis.com/v0/b/food-delivery-37c59.appspot.com/o/Images%2Flogo.png?alt=media&token=fc228623-ef27-4af4-8ea5-b9ebeeaf47dc"
             className="logo"
-            alt='logo'/>
+            alt='logo' />
         <div className="input-box">
-            <SearchRounded className="search-icon"/>
-            <input type="text" placeholder="Search"/>
+            <SearchRounded className="search-icon" />
+            <input type="text" placeholder="Search" />
         </div>
 
         <div className="shopping-cart">
-            <ShoppingCartRounded className="cart"/>
+            <ShoppingCartRounded className="cart" />
             <div className="cart-content">
-                <p>2</p>
+                <p>{cart ? cart.length : 0}</p>
             </div>
         </div>
 
@@ -35,7 +38,7 @@ function Header() {
                 <img
                     className="profile-pic"
                     src="https://firebasestorage.googleapis.com/v0/b/food-delivery-37c59.appspot.com/o/Images%2Fprofile.jpg?alt=media&token=36821495-39b9-4145-bde3-16c47c6ff937"
-                    alt='img'/>
+                    alt='img' />
             </div>
             <h2 className="user-name">
                 hamas butt
@@ -43,7 +46,7 @@ function Header() {
         </div>
 
         <div className="toggle-menu">
-            <BarChart className="toggle-icon"/>
+            <BarChart className="toggle-icon" />
         </div>
     </header>)
 }

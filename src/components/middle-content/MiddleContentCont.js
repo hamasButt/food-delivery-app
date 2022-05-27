@@ -23,6 +23,8 @@ export const MiddleContentCont = () => {
     }, [mainDataItem, cart])
 
 
+
+
     return (<main>
         <div className="main-container">
             <div className="banner">
