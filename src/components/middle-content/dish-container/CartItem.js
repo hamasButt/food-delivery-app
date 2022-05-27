@@ -14,8 +14,8 @@ export const CartItem = ({ name, imgSrc, price, itemId }) => {
     )
     useEffect(() => {
         cartItems = cart
-        setPrice(parseInt(qty) * parseFloat(price))
-    }, [qty, cart, price])
+        setPrice(parseInt(qty) * parseFloat(price)),
+        [cart,price,qty]}
 
     const updateQty = (action, id) => {
         if (action === 'add') setQty(qty + 1)

@@ -10,7 +10,7 @@ export const ItemsCard = ({imgSrc, name, price, rating, itemId}) => {
     const [isFavourite, setIsFavourite] = useState(false)
     const [currentVal, setCurrentVal] = useState(Math.floor(rating))
     const [isCart, setCart] = useState(null)
-    const [{}, dispatch] = useStateValue()
+    const dispatch = useStateValue()
 
     useEffect(() => {
         if (isCart) {
