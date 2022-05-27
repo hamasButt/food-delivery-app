@@ -20,7 +20,7 @@ export const CartItem = ({name, imgSrc, price, itemId}) => {
     const updateQty = (action, id) => {
         if (action === 'add') setQty(qty + 1)
         else {
-            if (qty == 1) {
+            if (qty === 1) {
                 cartItems.pop(id)
                 dispatch({
                     type: actionType.SET_CART,
